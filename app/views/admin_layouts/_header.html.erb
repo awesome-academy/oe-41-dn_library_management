@@ -1,0 +1,81 @@
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Library Management</h3>
+    </div>
+
+    <ul class="list-unstyled components">
+      <p>Admin page</p>
+      <li>
+        <a href="#">Action 1</a>
+      </li>
+      <li>
+        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Action 2</a>
+        <ul class="collapse list-unstyled" id="pageSubmenu">
+          <li>
+            <a href="#">Action 2-1</a>
+          </li>
+          <li>
+            <a href="#">Action 2-2</a>
+          </li>
+          <li>
+            <a href="#">Action 2-3</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Action 3</a>
+      </li>
+      <li>
+        <a href="#">Action 4</a>
+      </li>
+    </ul>
+
+    <ul class="list-unstyled CTAs">
+      <li>
+        <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+      </li>
+      <li>
+        <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light box-shadow">
+      <div class="container-fluid">
+
+        <button type="button" id="sidebarCollapse" class="btn btn-secondary">
+          <i class="fas fa-align-left"></i>
+          <span>Main menu</span>
+        </button>
+        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-align-justify"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav navbar-nav ml-auto">
+
+            <li class="nav-item active nav-link"><%= link_to "English", locale: :en %></li>
+            <li class="nav-item active nav-link"><%= link_to "Vietnamese", locale: :vi %></li>
+            <li class="nav-item active nav-link"><%= link_to "Home", admin_pages_home_path %></li>
+            <li class="nav-item active nav-link"><%= link_to "Help", admin_pages_help_path %></li>
+            <li class="nav-item active nav-link"><%= link_to "Logout" %></li>
+            <li class="nav-item active nav-link">
+              <%= link_to admin_pages_home_path do %>
+                <%= image_tag ("avatar-1.jpg"),class: "img-radius box-shadow", alt: "avatar" %>
+                <span>Lý Nhã Kỳ</span>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="center jumbotron box-shadow main-content">
+      <%= yield %>
+    </div>
+  </div>
+</div>
