@@ -10,10 +10,7 @@
 
 <body>
   <%= render "layouts/header" %>
-  <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-  <% end %>
-  <div class="container-fluid">
+  <div class="container-fluid" style="padding-top: 50px; margin-bottom: 20px">
     <%= render "layouts/flash_msg" , collection: @flash %>
     <%= yield %>
   </div>
