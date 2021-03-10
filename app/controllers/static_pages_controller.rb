@@ -8,17 +8,18 @@ class StaticPagesController < ApplicationController
   end
 
   def list_books
+    @category = Category.all
     @books = check_params.includes(:author, :category)
                          .paginate(page: params[:page],
-                          per_page: Settings.static_page.per_page)
+                         per_page: Settings.static_page.per_page)
   end
 
   private
 
   def check_params
-    type = params[:option]
     value = params[:term]
-    s_books = Settings.static_page.search_books
+    type = params[:option]
+    s_books = Settings.static_page.search_book
     s_author = Settings.static_page.search_author
     s_category = Settings.static_page.search_category
 
